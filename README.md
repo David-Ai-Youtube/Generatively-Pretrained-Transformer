@@ -116,6 +116,25 @@ After processing all the batches in the training dataset, it divides the total_l
 
 In summary, the estimate_loss function computes the average loss for a given dataset using a specified loss function and the model's predictions on that dataset. This function is useful for evaluating the model's performance during training and monitoring for overfitting or underfitting.
 
+```
+
+@torch.no_grad()
+def estimate_loss():
+    out = {}
+    model.eval()
+    for split in ['train', 'val']:
+        losses = torch.zeros(eval_iters)
+        for k in range(eval_iters):
+            X, Y = get_batch(split)
+            logits, loss = model(X, Y)
+            losses[k] = loss.item()
+        out[split] = losses.mean()
+    model.train()
+    return out
+
+
+```
+
 In the self-attention mechanism of the transformer, each input token has a query, key, and value vector. These vectors are used to compute the attention scores between the input tokens, which are then used to compute a weighted sum of the values, producing the output. The Head class in the code defines these three linear transformations.
 
 The Head class takes a head_size argument, which determines the size of the query, key, and value vectors. It then defines three linear transformations, key, query, and value, using PyTorch's nn.Linear module. These linear transformations take an input tensor of shape (batch_size, block_size, n_embd) and transform it into query, key, and value tensors of shape (batch_size, block_size, head_size).
