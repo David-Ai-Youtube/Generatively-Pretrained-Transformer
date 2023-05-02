@@ -470,7 +470,7 @@ The training loop in the code is the main part of the program that trains the Tr
 
     - Updates the model parameters using stochastic gradient descent (SGD) with the learning rate specified by the learning_rate hyperparameter.
 
-    #Periodically evaluates the model on the validation dataset at intervals specified by the eval_interval hyperparameter.
+    - Periodically evaluates the model on the validation dataset at intervals specified by the eval_interval hyperparameter.
 
 After the training loop finishes, the final model parameters are saved to a file named 'model.pth'.
 
