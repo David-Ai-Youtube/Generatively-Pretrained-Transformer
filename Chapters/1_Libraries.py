@@ -7,7 +7,8 @@
 #It includes classes for defining different types of layers, loss functions, and optimization algorithms. 
 #The nn module also provides pre-built models, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), which can be used for a variety of tasks.
 
-#The functional (F) module in nn provides a set of functions that can be used to define neural network layers and operations. These functions are stateless and do not have any internal parameters. They can be used to define custom layers and operations in PyTorch.
+#The functional (F) module in nn provides a set of functions that can be used to define neural network layers and operations. 
+#These functions are stateless and do not have any internal parameters. They can be used to define custom layers and operations in PyTorch.
 
 #By importing these libraries, the code can utilize PyTorch's capabilities to build, train and evaluate neural network models for a variety of tasks.
 
