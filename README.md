@@ -8,6 +8,12 @@ The functional (F) module in nn provides a set of functions that can be used to 
 
 By importing these libraries, the code can utilize PyTorch's capabilities to build, train and evaluate neural network models for a variety of tasks.
 
+```
+import torch
+import torch.nn as nn
+from torch.nn import functional as F
+```
+
 Hyperparameters are values that define the structure and behavior of a machine learning model, but are not learned during the training process. They are set by the user prior to training and can greatly impact the performance of the model.
 
 In this code, several hyperparameters are initialized:
