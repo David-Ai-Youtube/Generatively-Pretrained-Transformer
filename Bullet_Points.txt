@@ -1,0 +1,27 @@
+Transformer model for a language modeling task, where the goal is to predict the next character in a sequence of characters given some context. Here is a summary of the different components:
+
+    Libraries: The code imports necessary libraries including PyTorch, nn module, and functional module from nn.
+
+    Hyperparameters: The code initializes several hyperparameters such as batch_size, block_size, max_iters, eval_interval, learning_rate, device, eval_iters, n_embd, n_head, n_layer, and dropout.
+
+    Reading Data: The code reads input data from a file called 'input.txt', preprocesses it by creating a mapping between characters and integers, and splits it into training and validation sets.
+
+    Data Loading Function: The code defines a function, get_batch, that generates small batches of data for inputs and targets.
+
+    Loss Estimation Function: The code defines a function, estimate_loss, which estimates the loss for the training and validation datasets using the get_batch function.
+
+    Self-Attention Head: The code defines a class, Head, that represents one head of self-attention, which takes a head_size argument and defines three linear layers (key, query, and value) and a buffer called tril, used to mask out the upper triangular part of the attention scores.
+
+    Multi-Head Attention: The code defines a class, MultiHeadAttention, which represents multiple heads of self-attention in parallel.
+
+    Feedforward Network: The code defines a class, FeedForward, which represents a simple linear layer followed by a non-linearity.
+
+    Transformer Block: The code defines a class, Block, which represents a transformer block.
+
+    Model Definition: The code defines a class, TransformerModel, which represents the entire transformer model.
+
+    Initializing Model: The code initializes an instance of the TransformerModel class and sends it to the GPU if available.
+
+    Training Loop: The code defines a training loop that runs for max_iters iterations, where it gets a batch of data using the get_batch function, computes the forward pass of the model, calculates the loss, and performs backpropagation using stochastic gradient descent (SGD).
+
+    Evaluating Model: The code evaluates the model every eval_interval iterations using the estimate_loss function.
