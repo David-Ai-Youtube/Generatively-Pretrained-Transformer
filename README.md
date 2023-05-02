@@ -1,7 +1,8 @@
-PyTorch implementation of Transformer block for character-level language modeling
+# PyTorch implementation of Transformer block for character-level language modeling
 
-# Inspired by the youtube video by Andrej Karpathy
-# All code is based from his video.
+Inspired by the youtube video by Andrej Karpathy
+All code is based from his video.
+
 ```
     # Youtube
     https://www.youtube.com/watch?v=kCc8FmEb1nY
@@ -26,7 +27,7 @@ Tags: PyTorch, Transformer, character-level language modeling, Tiny Shakespeare,
 
 
 ----------------
-1. Libraries:
+# 1. Libraries:
 ----------------
 
 PyTorch is a popular open-source machine learning framework used for developing and training neural networks. 
