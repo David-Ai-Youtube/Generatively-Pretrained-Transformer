@@ -1,4 +1,16 @@
-Generatively-Pretrained-Transformer
+PyTorch implementation of Transformer block for character-level language modeling
+
+This repository contains PyTorch implementation of the Transformer block for character-level language modeling. The model is trained on the Tiny Shakespeare dataset and is able to generate new text based on the input text. The implementation includes the following components:
+
+    Head: one head of self-attention
+    MultiHeadAttention: multiple heads of self-attention in parallel
+    FeedFoward: a simple linear layer followed by a non-linearity
+    Block: Transformer block
+
+The code includes hyperparameters, data loading, and a function for estimating the loss. The model is trained using backpropagation and the Adam optimizer. The repository also includes a pre-trained model that can be used for generating new text.
+
+Tags: PyTorch, Transformer, character-level language modeling, Tiny Shakespeare, self-attention, feedforward, backpropagation, Adam optimizer.
+
 
 ----------------
 1. Libraries:
