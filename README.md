@@ -54,6 +54,28 @@ Once the mapping between characters and integers has been created, the input tex
 
 Overall, this process of reading and preprocessing data is an important step in preparing the data for training the model. By converting the input text into a format that can be processed by the model, it allows the model to learn patterns and relationships in the data that can be used for generating new text.
 
+```
+with open('input.txt', 'r', encoding='utf-8') as f:
+    text = f.read()
+
+# here are all the unique characters that occur in this text
+chars = sorted(list(set(text)))
+vocab_size = len(chars)
+
+# create a mapping from characters to integers
+stoi = { ch:i for i,ch in enumerate(chars) }
+itos = { i:ch for i,ch in enumerate(chars) }
+encode = lambda s: [stoi[c] for c in s] # encoder: take a string, output a list of integers
+decode = lambda l: ''.join([itos[i] for i in l]) # decoder: take a list of integers, output a string
+
+# Train and test splits
+data = torch.tensor(encode(text), dtype=torch.long)
+n = int(0.9*len(data)) # first 90% will be train, rest val
+train_data = data[:n]
+val_data = data[n:]
+
+```
+
 The get_batch function is defined to generate small batches of data for inputs and targets. It takes in three arguments: data, idx, and bptt.
 
     data is the input data as a list of integers.
@@ -64,15 +86,27 @@ The function first selects a batch of inputs and targets from the input data usi
 
 Here's the implementation of the get_batch function:
 
-python
-
+```
 def get_batch(data, idx, bptt):
     seq_len = min(bptt, len(data) - 1 - idx)
     x = data[idx:idx + seq_len]
     y = data[idx + 1:idx + 1 + seq_len].view(-1)
     return torch.tensor(x).to(device), torch.tensor(y).to(device)
+```
 
 The function first calculates the maximum sequence length based on the bptt parameter and the remaining length of the input data starting from idx. It then selects the inputs x and targets y from the input data, where x is a sequence of length seq_len starting from idx, and y is the sequence of the same length shifted by one character to the right. The targets are flattened into a 1D tensor using the view(-1) method. Finally, the function returns x and y as PyTorch tensors on the GPU if it is available.
+
+```
+# data loading
+def get_batch(split):
+    # generate a small batch of data of inputs x and targets y
+    data = train_data if split == 'train' else val_data
+    ix = torch.randint(len(data) - block_size, (batch_size,))
+    x = torch.stack([data[i:i+block_size] for i in ix])
+    y = torch.stack([data[i+1:i+block_size+1] for i in ix])
+    x, y = x.to(device), y.to(device)
+    return x, y
+```
 
 The estimate_loss function takes the model, the training and validation datasets, the loss function, and the device as input. It first initializes two variables, total_loss and total_count, to zero.
 
