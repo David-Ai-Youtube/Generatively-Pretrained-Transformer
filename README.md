@@ -1,5 +1,7 @@
 # Generatively-Pretrained-Transformer
 
+1. LIBRARIES
+
 PyTorch is a popular open-source machine learning framework used for developing and training neural networks. It is widely used in deep learning research and industry due to its flexibility, ease of use, and scalability.
 
 The nn module in PyTorch provides a high-level interface for building neural networks. It includes classes for defining different types of layers, loss functions, and optimization algorithms. The nn module also provides pre-built models, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), which can be used for a variety of tasks.
@@ -13,6 +15,8 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 ```
+
+2. HYPERPARAMETERS
 
 Hyperparameters are values that define the structure and behavior of a machine learning model, but are not learned during the training process. They are set by the user prior to training and can greatly impact the performance of the model.
 
