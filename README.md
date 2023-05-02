@@ -1,8 +1,16 @@
 PyTorch implementation of Transformer block for character-level language modeling
 
-Inspired by the youtube video by Andrej Karpathy
+# Inspired by the youtube video by Andrej Karpathy
+# All code is based from his video.
 ```
-https://www.youtube.com/watch?v=kCc8FmEb1nY
+    # Youtube
+    https://www.youtube.com/watch?v=kCc8FmEb1nY
+    
+    # Colab
+    https://colab.research.google.com/drive/1JMLa53HDuA-i7ZBmqV7ZnA3c_fvtXnx-?usp=sharing
+    
+    # Repo
+    https://github.com/karpathy/ng-video-lecture
 ```
 
 This repository contains PyTorch implementation of the Transformer block for character-level language modeling. The model is trained on the Tiny Shakespeare dataset and is able to generate new text based on the input text. The implementation includes the following components:
