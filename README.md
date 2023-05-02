@@ -32,6 +32,20 @@ In this code, several hyperparameters are initialized:
 
 By setting these hyperparameters, the code can be customized to the specific requirements of the task and the available resources. Choosing appropriate hyperparameters is crucial for achieving good performance in a machine learning model.
 
+```
+    batch_size = 16 # how many independent sequences will we process in parallel?
+    block_size = 32 # what is the maximum context length for predictions?
+    max_iters = 5000 # maximum number of iterations for training
+    eval_interval = 100 # how often should we evaluate the model during training?
+    learning_rate = 1e-3 # learning rate for the optimizer
+    device = 'cuda' if torch.cuda.is_available() else 'cpu' # use CUDA if available, otherwise use CPU
+    eval_iters = 200 # number of iterations for evaluation
+    n_embd = 64 # dimensionality of the embeddings
+    n_head = 4 # number of attention heads in each layer
+    n_layer = 4 # number of layers in the transformer model
+    dropout = 0.0 # dropout probability during training
+```
+
 The code reads input data from a text file named 'input.txt'. The text file is read using Python's built-in function, open(), and the entire text is stored as a string in a variable called text. This text is then used to create a mapping between characters and integers, which is required for feeding the data into the model.
 
 The mapping between characters and integers is created using two dictionaries: stoi and itos. stoi is a dictionary that maps each unique character in the input text to a unique integer value, and itos is a dictionary that maps each unique integer value back to its corresponding character.
