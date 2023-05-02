@@ -1,5 +1,0 @@
-After defining the TransformerModel class, the code creates an instance of this class called model by passing in the hyperparameters defined earlier (n_embd, n_head, n_layer, and dropout) to the class constructor. This initializes all the weights and biases of the model's layers.
-
-The next step is to check if a GPU is available by calling the torch.cuda.is_available() function. If a GPU is available, the code sets the device to "cuda" and moves the model to the GPU using the to() method. This will enable the model to run on the GPU, which can significantly speed up training.
-
-If a GPU is not available, the device is set to "cpu", and the model remains on the CPU.
