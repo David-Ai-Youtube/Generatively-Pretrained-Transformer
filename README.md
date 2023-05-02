@@ -1,7 +1,6 @@
 # PyTorch implementation of Transformer block for character-level language modeling
 
-Inspired by the youtube video by Andrej Karpathy
-All code is based from his video.
+Inspired by the youtube video by Andrej Karpathy, all the code is based from his video.
 
 ```
     # Youtube
@@ -47,7 +46,7 @@ from torch.nn import functional as F
 ```
 
 ----------------
-2. Hyperparameters:
+# 2. Hyperparameters:
 ----------------
 
 Hyperparameters are values that define the structure and behavior of a machine learning model, but are not learned during the training process. They are set by the user prior to training and can greatly impact the performance of the model.
@@ -83,7 +82,7 @@ Choosing appropriate hyperparameters is crucial for achieving good performance i
 ```
 
 ----------------
-3. Reading Data:
+# 3. Reading Data:
 ----------------
 
 The code reads input data from a text file named 'input.txt'. The text file is read using Python's built-in function, open(), and the entire text is stored as a string in a variable called text. 
@@ -125,7 +124,7 @@ Train and test splits
 ```
 
 ----------------
-4. Data Loading Function
+# 4. Data Loading Function
 ----------------
 
 The get_batch function is defined to generate small batches of data for inputs and targets. It takes in three arguments: data, idx, and bptt.
@@ -162,7 +161,7 @@ Data loading
 ```
 
 ----------------
-5. Loss Estimation Function
+# 5. Loss Estimation Function
 ----------------
 
 The estimate_loss function takes the model, the training and validation datasets, the loss function, and the device as input. 
@@ -191,7 +190,7 @@ def estimate_loss():
 ```
 
 ----------------
-6. Self-Attention Head
+# 6. Self-Attention Head
 ----------------
 
 In the self-attention mechanism of the transformer, each input token has a query, key, and value vector. 
@@ -232,7 +231,7 @@ class Head(nn.Module):
 ```
 
 ----------------
-7. Multi-Head Attention
+# 7. Multi-Head Attention
 ----------------
 
 The MultiHeadAttention class is a building block for the Transformer model. It represents the multi-head self-attention mechanism, which allows the model to attend to different parts of the input simultaneously. The class takes two arguments: num_heads, which specifies the number of attention heads to use, and head_size, which specifies the size of each attention head.
@@ -258,7 +257,7 @@ class MultiHeadAttention(nn.Module):
 ```
 
 ----------------
-8. Feedforward Network
+# 8. Feedforward Network
 ----------------
 
 The FeedForward class in the code represents a simple feedforward neural network. It takes the number of embedding dimensions (n_embd) as an argument and defines a sequential neural network with two linear layers, a ReLU activation function, and a dropout layer.
@@ -283,7 +282,7 @@ def forward(self, x):
 ```
 
 ----------------
-9. Transformer Block
+# 9. Transformer Block
 ----------------
    
 The transformer block is the basic building block of the transformer model. 
@@ -324,7 +323,7 @@ class Block(nn.Module):
 ```
 
 ----------------
-10. Model Definition
+# 10. Model Definition
 ----------------
 
 The TransformerModel class defines the entire transformer model architecture by combining multiple Block layers along with the embedding layer and the final linear output layer.
@@ -429,7 +428,7 @@ class Block(nn.Module):
 ```
 
 ----------------
-11. Initializing Model
+# 11. Initializing Model
 ----------------
 
 After defining the TransformerModel class, the code creates an instance of this class called model by passing in the hyperparameters defined earlier (n_embd, n_head, n_layer, and dropout) to the class constructor. 
@@ -477,7 +476,7 @@ model.to(device)
 ```
 
 ----------------
-12. Training Loop
+# 12. Training Loop
 ----------------
 
 The training loop in the code is the main part of the program that trains the Transformer model. It runs for a fixed number of iterations specified by the max_iters hyperparameter. During each iteration, the loop performs the following steps:
@@ -501,7 +500,7 @@ The training loop in the code is the main part of the program that trains the Tr
 After the training loop finishes, the final model parameters are saved to a file named 'model.pth'.
 
 ----------------
-13. Evaluating Model
+# 13. Evaluating Model
 ----------------
 
 After training the model for a certain number of iterations, the code evaluates the model's performance on both the training and validation datasets using the estimate_loss function. This function computes the average loss across all batches of the dataset, where the loss is computed as the negative log-likelihood of the target sequence given the input sequence.
