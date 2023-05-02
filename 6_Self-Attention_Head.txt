@@ -1,7 +1,0 @@
-Self-Attention Head
-
-In the self-attention mechanism of the transformer, each input token has a query, key, and value vector. These vectors are used to compute the attention scores between the input tokens, which are then used to compute a weighted sum of the values, producing the output. The Head class in the code defines these three linear transformations.
-
-The Head class takes a head_size argument, which determines the size of the query, key, and value vectors. It then defines three linear transformations, key, query, and value, using PyTorch's nn.Linear module. These linear transformations take an input tensor of shape (batch_size, block_size, n_embd) and transform it into query, key, and value tensors of shape (batch_size, block_size, head_size).
-
-In addition to the linear transformations, the Head class also defines a buffer called tril, which is used to mask out the upper triangular part of the attention scores. This is done to ensure that each token only attends to the tokens that come before it in the sequence, and not to tokens that come after it, which would violate the causal nature of the transformer. The tril buffer is initialized to a lower-triangular matrix with ones in the lower triangle and zeros in the upper triangle.
