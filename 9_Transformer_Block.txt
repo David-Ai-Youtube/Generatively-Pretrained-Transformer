@@ -1,0 +1,14 @@
+The transformer block is the basic building block of the transformer model. The code defines a class, Block, which represents a transformer block. The block contains two sub-layers: a multi-head attention layer and a feedforward layer. Each sub-layer is followed by a layer normalization step, which helps to stabilize the training process.
+
+The Block class takes the following arguments:
+
+    n_embd: The number of embedding dimensions.
+    n_head: The number of attention heads.
+    dropout: The dropout rate.
+    block_size: The maximum block size.
+
+The Block class has the following methods:
+
+    forward(x): This method takes an input tensor x of shape (batch_size, block_size, n_embd) and passes it through the multi-head attention and feedforward layers, followed by layer normalization. The output of the layer is returned.
+
+The Block class is used to create the encoder and decoder layers of the transformer model.
