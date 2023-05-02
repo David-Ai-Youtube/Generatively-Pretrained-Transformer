@@ -1,6 +1,8 @@
 #The TransformerModel class defines the entire transformer model architecture by combining multiple Block layers along with the embedding layer and the final linear output layer.
 
-#The __init__ method initializes the hyperparameters and creates the embedding layer, as well as a list of Block layers. The forward method then takes the input tokens, passes them through the embedding layer, applies the series of Block layers, and finally passes the output through the final linear layer to generate the predicted output.
+#The __init__ method initializes the hyperparameters and creates the embedding layer, as well as a list of Block layers. 
+#The forward method then takes the input tokens, passes them through the embedding layer, applies the series of Block layers, 
+#and finally passes the output through the final linear layer to generate the predicted output.
 
 #Specifically, the __init__ method defines the following components:
 
