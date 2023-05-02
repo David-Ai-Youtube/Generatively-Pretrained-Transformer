@@ -1,5 +1,8 @@
 PyTorch implementation of Transformer block for character-level language modeling
 
+Inspired by the youtube video by Andrej Karpathy
+https://www.youtube.com/watch?v=kCc8FmEb1nY
+
 This repository contains PyTorch implementation of the Transformer block for character-level language modeling. The model is trained on the Tiny Shakespeare dataset and is able to generate new text based on the input text. The implementation includes the following components:
 
     Head: one head of self-attention
